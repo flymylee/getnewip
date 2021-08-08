@@ -7,7 +7,11 @@
 
 ## How to use
 
-0. First of all, **install python 3.x** on your computer.
+0. First of all, **install python 3.x** on your computer. And install **[Requests](https://github.com/psf/requests)**.
+
+```
+pip install requests
+```
 
 1. If you don't know what to do, just type as following.
 
@@ -15,7 +19,7 @@
 python getnewip.py --skeleton
 ```
 
-2. Open your skeleton file, and modify it. But, the last key "Value" gets filled by this app.
+2. Open your skeleton file, and modify it. But, the last key **"Value" gets filled by this app**.
 
 ```
 {
