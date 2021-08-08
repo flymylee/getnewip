@@ -44,7 +44,7 @@ elif sys.argv[1] == "--json":
 		try:
 			with open(path, 'r') as f:
 				data = json.load(f)
-				data["ChangeBatch"]["Changes"]["ResourceRecordSet"]["ResourceRecords"]["Value"] = public_ip
+				data["Changes"][0]["ResourceRecordSet"]["ResourceRecords"][0]["Value"] = public_ip
 
 		except OSError as err:
 			print("File not exists!\n")
@@ -59,22 +59,24 @@ elif sys.argv[1] == "--json":
 # Generate a snippet has the basic structure of a JSON template
 elif sys.argv[1] == "--skeleton":
 	with open("skeleton.json", 'w') as f:
+
 		skeleton = {
-			"HostedZoneId": "",
-			"ChangeBatch": {
-				"Comment": "",
-				"Changes": {
+			"Comment": "",
+			"Changes": [
+				{
 					"Action": "[CREATE|DELETE|UPSERT]",
 					"ResourceRecordSet": {
 						"Name": "",
 						"Type": "[A|TXT|MX]",
 						"TTL": 0,
-						"ResourceRecords": {
+						"ResourceRecords": [
+							{
 							"Value": ""
-						}
+							}
+						]
 					}
 				}
-			}
+			]
 		}
 
 		json.dump(skeleton, f, indent=2)

@@ -23,21 +23,22 @@ python getnewip.py --skeleton
 
 ```
 {
-  "HostedZoneId": "",
-  "ChangeBatch": {
-    "Comment": "",
-    "Changes": {
+  "Comment": "",
+  "Changes": [
+    {
       "Action": "[CREATE|DELETE|UPSERT]",
       "ResourceRecordSet": {
         "Name": "",
         "Type": "[A|TXT|MX]",
         "TTL": 0,
-        "ResourceRecords": {
-          "Value": ""
-        }
+        "ResourceRecords": [
+          {
+            "Value": ""
+          }
+        ]
       }
     }
-  }
+  ]
 }
 ```
 
